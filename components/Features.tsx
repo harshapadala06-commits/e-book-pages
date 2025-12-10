@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TrendingUp, Users, DollarSign, Camera, Zap, ShieldCheck, ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, Camera, Zap, ShieldCheck, ChevronDown, ChevronUp, BookOpen, MessageCircle, Hash, ClipboardCheck } from 'lucide-react';
 import { Feature } from '../types';
 
 const features: Feature[] = [
@@ -33,6 +33,21 @@ const features: Feature[] = [
     description: "What not to do. Keep your account safe from engagement throttling.",
     icon: <ShieldCheck className="w-6 h-6 text-white" />,
   },
+  {
+    title: "Story Sales Scripts",
+    description: "Exact word-for-word scripts to convert story views into DMs and sales.",
+    icon: <MessageCircle className="w-6 h-6 text-white" />,
+  },
+  {
+    title: "SEO & Hashtag Vault",
+    description: "The new SEO strategy that replaces dead hashtags. Rank on Explore pages easily.",
+    icon: <Hash className="w-6 h-6 text-white" />,
+  },
+  {
+    title: "Profile Audit Kit",
+    description: "A 15-point checklist to ensure your profile converts visitors into followers.",
+    icon: <ClipboardCheck className="w-6 h-6 text-white" />,
+  },
 ];
 
 const chapters = [
@@ -55,6 +70,11 @@ const chapters = [
     module: "Module 4",
     title: "Monetization",
     lessons: ["Setting up your first Digital Product", "Affiliate Marketing without being spammy", "Pitching Brands with <5k Followers"]
+  },
+  {
+    module: "Module 5",
+    title: "Scaling & Automation",
+    lessons: ["Building a Content System in Notion", "Hiring your first Video Editor", "From Creator to Business Owner"]
   }
 ];
 

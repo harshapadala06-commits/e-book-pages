@@ -182,8 +182,8 @@ const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
                     </div>
 
                     <div id="tip-result" class="hidden bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 w-full">
-                        <p class="text-lg text-gray-800 font-serif italic leading-relaxed text-center">
-                        "Optimize your bio to clearly state what you do and who you help in the first 3 seconds of a visit."
+                        <p class="text-lg text-gray-800 font-serif italic leading-relaxed text-center" id="tip-text-content">
+                          <!-- Tip goes here -->
                         </p>
                         <div class="mt-6 flex justify-center">
                             <button id="reset-tip-btn" class="text-sm text-gray-500 hover:text-brand-orange transition-colors flex items-center">
@@ -232,7 +232,57 @@ const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
                     <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-purple transition-colors">Monetization Models</h3>
                     <p class="text-gray-600 leading-relaxed">Five proven ways to make $1,000/mo even with a small following under 2k.</p>
                   </div>
-                   <!-- More features can be added similarly -->
+
+                  <div class="group p-8 bg-gray-50 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-purple rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                      <i data-lucide="camera" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-purple transition-colors">Visual Aesthetics</h3>
+                    <p class="text-gray-600 leading-relaxed">Create a cohesive, high-end feed look using just your smartphone and free apps.</p>
+                  </div>
+
+                  <div class="group p-8 bg-gray-50 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-purple rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                      <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-purple transition-colors">Viral Reels Framework</h3>
+                    <p class="text-gray-600 leading-relaxed">Copy-paste scripts and hook structures that have generated millions of views.</p>
+                  </div>
+
+                  <div class="group p-8 bg-gray-50 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-purple rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                      <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-purple transition-colors">Shadowban Protection</h3>
+                    <p class="text-gray-600 leading-relaxed">What not to do. Keep your account safe from engagement throttling.</p>
+                  </div>
+
+                   <!-- NEW FEATURES START -->
+                   <div class="group p-8 bg-gray-50 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-purple rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                      <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-purple transition-colors">Story Sales Scripts</h3>
+                    <p class="text-gray-600 leading-relaxed">Exact word-for-word scripts to convert story views into DMs and sales.</p>
+                  </div>
+
+                  <div class="group p-8 bg-gray-50 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-purple rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                      <i data-lucide="hash" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-purple transition-colors">SEO &amp; Hashtag Vault</h3>
+                    <p class="text-gray-600 leading-relaxed">The new SEO strategy that replaces dead hashtags. Rank on Explore pages easily.</p>
+                  </div>
+
+                  <div class="group p-8 bg-gray-50 rounded-2xl transition-all duration-300 hover:bg-white hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-100">
+                    <div class="w-12 h-12 bg-gradient-to-br from-brand-orange to-brand-purple rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform">
+                      <i data-lucide="clipboard-check" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-purple transition-colors">Profile Audit Kit</h3>
+                    <p class="text-gray-600 leading-relaxed">A 15-point checklist to ensure your profile converts visitors into followers.</p>
+                  </div>
+                   <!-- NEW FEATURES END -->
+
                 </div>
 
                 <!-- Syllabus -->
@@ -280,6 +330,25 @@ const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
                         </ul>
                       </div>
                     </div>
+
+                    <!-- Module 5 (Added) -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden bg-gray-50 hover:border-brand-purple/30 transition-colors">
+                      <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none syllabus-toggle">
+                        <div class="flex items-center gap-4">
+                          <span class="text-xs font-bold text-brand-orange uppercase tracking-wider bg-brand-orange/10 px-2 py-1 rounded">Module 5</span>
+                          <span class="font-bold text-gray-900 text-lg">Scaling & Automation</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 icon-chevron"></i>
+                      </button>
+                      <div class="hidden px-5 pb-5 pt-0 syllabus-content">
+                        <ul class="space-y-3 ml-2 border-l-2 border-brand-purple/20 pl-4 mt-2">
+                          <li class="text-gray-600 text-sm flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-brand-purple mr-2"></div>Building a Content System in Notion</li>
+                          <li class="text-gray-600 text-sm flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-brand-purple mr-2"></div>Hiring your first Video Editor</li>
+                          <li class="text-gray-600 text-sm flex items-center"><div class="w-1.5 h-1.5 rounded-full bg-brand-purple mr-2"></div>From Creator to Business Owner</li>
+                        </ul>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -352,8 +421,8 @@ const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
             </section>
 
             <!-- FOOTER -->
-            <footer class="bg-white border-t border-gray-100 py-12">
-              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center mb-12">
                 <div class="mb-6 md:mb-0">
                   <span class="text-xl font-serif font-bold tracking-tight text-gray-900">
                     V STORE <span class="text-brand-orange">ONLINE</span>
@@ -361,11 +430,28 @@ const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
                   <p class="text-sm text-gray-500 mt-2">© 2025 V STORE ONLINE. All rights reserved.</p>
                   <p class="text-xs text-brand-purple mt-1 font-medium">Our Debut Entry into the Ebooks Community.</p>
                 </div>
-                <div class="flex space-x-6">
-                  <a href="#" class="text-gray-400 hover:text-brand-pink transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                  <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                  <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                <div class="flex items-center space-x-8">
+                  <a href="https://www.instagram.com/vstoreonline.in" target="_blank" class="group flex flex-col items-center text-gray-400 hover:text-brand-pink transition-colors">
+                    <div class="p-2 rounded-full group-hover:bg-brand-pink/10 transition-colors">
+                      <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[10px] font-bold mt-0.5 tracking-wide">@vstoreonline.in</span>
+                  </a>
+                  
+                  <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors pt-4">
+                      <i data-lucide="twitter" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors pt-4">
+                      <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                  </div>
                 </div>
+              </div>
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-100 pt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-6 text-sm text-gray-500 font-medium">
+                  <button id="btn-legal-about" class="hover:text-brand-purple transition-colors">About Us</button>
+                  <button id="btn-legal-privacy" class="hover:text-brand-purple transition-colors">Privacy Policy</button>
+                  <button id="btn-legal-terms" class="hover:text-brand-purple transition-colors">Terms & Conditions</button>
               </div>
             </footer>
             
@@ -426,6 +512,24 @@ const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
               </div>
             </div>
 
+            <!-- Legal Modal (Hidden by default) -->
+            <div id="legal-modal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                <div class="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+                    <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex justify-between items-center flex-shrink-0">
+                        <h3 id="legal-modal-title" class="font-serif font-bold text-gray-900 text-xl">Legal</h3>
+                        <button id="close-legal-modal-btn" class="text-gray-400 hover:text-gray-600 transition-colors">
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                    <div id="legal-modal-body" class="p-8 overflow-y-auto text-gray-600 space-y-4">
+                        <!-- Content injected via JS -->
+                    </div>
+                    <div class="bg-gray-50 px-6 py-4 border-t border-gray-100 flex justify-end flex-shrink-0">
+                        <button id="close-legal-modal-btn-2" class="px-6 py-2 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">Close</button>
+                    </div>
+                </div>
+            </div>
+
           </div>
           
           <script>
@@ -476,31 +580,113 @@ const xmlContent = `<?xml version="1.0" encoding="UTF-8" ?>
                 });
             });
 
-            // Mock Free Tip Generator
+            // --- LEGAL MODALS LOGIC ---
+            const legalModal = document.getElementById('legal-modal');
+            const legalTitle = document.getElementById('legal-modal-title');
+            const legalBody = document.getElementById('legal-modal-body');
+            const closeLegalBtns = [document.getElementById('close-legal-modal-btn'), document.getElementById('close-legal-modal-btn-2')];
+
+            const legalContent = {
+                about: {
+                    title: "About V STORE ONLINE",
+                    html: "<p>Welcome to <strong>V STORE ONLINE</strong>, a premier digital storefront.</p><p>Founded in 2024, our mission is to decode the complexities of the digital economy.</p><p>InstaGrow30 represents our flagship entry into educational products.</p>"
+                },
+                privacy: {
+                    title: "Privacy Policy",
+                    html: "<p><strong>Last Updated: January 2025</strong></p><p>We collect basic information (Name, Email, Phone) only when you voluntarily provide it during checkout.</p><p>Your email is used solely to send you the ebook and updates. We do not sell your data.</p>"
+                },
+                terms: {
+                    title: "Terms & Conditions",
+                    html: "<p><strong>Last Updated: January 2025</strong></p><p>Since InstaGrow30 is a digital product, access is granted immediately. Content is for personal use only.</p><p>Refunds available within 7 days if unsatisfied.</p>"
+                }
+            };
+
+            function openLegal(type) {
+                const content = legalContent[type];
+                if(content && legalModal) {
+                    legalTitle.innerText = content.title;
+                    legalBody.innerHTML = content.html;
+                    legalModal.classList.remove('hidden');
+                    legalModal.classList.add('flex');
+                }
+            }
+
+            document.getElementById('btn-legal-about')?.addEventListener('click', () => openLegal('about'));
+            document.getElementById('btn-legal-privacy')?.addEventListener('click', () => openLegal('privacy'));
+            document.getElementById('btn-legal-terms')?.addEventListener('click', () => openLegal('terms'));
+
+            closeLegalBtns.forEach(btn => {
+                btn?.addEventListener('click', () => {
+                    legalModal.classList.add('hidden');
+                    legalModal.classList.remove('flex');
+                });
+            });
+
+
+            // --- FREE TIP GENERATOR LOGIC (LOCAL STORAGE & OFFLINE) ---
             const genBtn = document.getElementById('generate-tip-btn');
             const loading = document.getElementById('tip-loading');
             const result = document.getElementById('tip-result');
+            const resultText = document.getElementById('tip-text-content');
             const resetBtn = document.getElementById('reset-tip-btn');
 
+            const OFFLINE_TIPS = [
+              "Optimize your bio to clearly state what you do and who you help in the first 3 seconds of a visit.",
+              "Reply to every comment with a question within the first hour to double your engagement rate.",
+              "Use 3-5 SEO keywords in your caption instead of 30 generic hashtags.",
+              "Post Reels that loop seamlessly; watch time is the #1 ranking factor in 2025.",
+              "Audit your following: remove ghost followers to increase your engagement percentage.",
+              "Use the 'Green Screen' effect to comment on trending industry news for instant authority.",
+              "Create a 'Start Here' highlight to convert new visitors into followers immediately.",
+              "Collaborate with accounts that have your ideal audience but aren't direct competitors.",
+              "Stop posting watermarked TikToks; Instagram's algorithm actively demotes them.",
+              "Write captions that encourage 'Saves'—it is the highest value metric for algorithmic reach."
+            ];
+
+            // 1. Check Local Storage on Load
+            if(genBtn && resultText) {
+                const savedTip = localStorage.getItem('instaGrow_unlockedTip');
+                if(savedTip) {
+                    genBtn.classList.add('hidden');
+                    resultText.innerText = '"' + savedTip + '"';
+                    result.classList.remove('hidden');
+                    result.classList.add('block');
+                }
+            }
+
+            // 2. Generate New Tip
             if(genBtn) {
               genBtn.addEventListener('click', () => {
                   genBtn.classList.add('hidden');
                   loading.classList.remove('hidden');
                   loading.classList.add('flex');
                   
-                  // Simulate API call
+                  // Simulate API call delay
                   setTimeout(() => {
+                      const randomTip = OFFLINE_TIPS[Math.floor(Math.random() * OFFLINE_TIPS.length)];
+                      
+                      // Save to Local Storage
+                      localStorage.setItem('instaGrow_unlockedTip', randomTip);
+                      
                       loading.classList.add('hidden');
                       loading.classList.remove('flex');
+                      
+                      resultText.innerText = '"' + randomTip + '"';
                       result.classList.remove('hidden');
                       result.classList.add('block');
-                  }, 2000);
+                  }, 1500);
               });
   
               resetBtn.addEventListener('click', () => {
-                  result.classList.add('hidden');
-                  result.classList.remove('block');
-                  genBtn.classList.remove('hidden');
+                  const randomTip = OFFLINE_TIPS[Math.floor(Math.random() * OFFLINE_TIPS.length)];
+                  localStorage.setItem('instaGrow_unlockedTip', randomTip);
+                  
+                  // Simple flash effect
+                  result.classList.add('opacity-50');
+                  setTimeout(() => {
+                      resultText.innerText = '"' + randomTip + '"';
+                      result.classList.remove('opacity-50');
+                  }, 200);
               });
             }
             

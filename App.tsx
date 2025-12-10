@@ -7,6 +7,7 @@ import FreeTipGenerator from './components/FreeTipGenerator';
 import TemplateDownloader from './components/TemplateDownloader';
 import PaymentSuccessModal from './components/PaymentSuccessModal';
 import UserDetailsModal from './components/UserDetailsModal';
+import LegalModals, { LegalModalType } from './components/LegalModals';
 import { Menu, X } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -16,6 +17,7 @@ const App: React.FC = () => {
   // Modal States
   const [showUserDetailsModal, setShowUserDetailsModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [legalModalType, setLegalModalType] = useState<LegalModalType>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -168,7 +170,7 @@ const App: React.FC = () => {
         </section>
 
       </main>
-      <Footer />
+      <Footer onOpenLegal={setLegalModalType} />
       
       {/* Modals */}
       <UserDetailsModal 
@@ -180,6 +182,11 @@ const App: React.FC = () => {
       <PaymentSuccessModal 
         isOpen={showSuccessModal} 
         onClose={() => setShowSuccessModal(false)} 
+      />
+
+      <LegalModals 
+        type={legalModalType} 
+        onClose={() => setLegalModalType(null)} 
       />
       
       <TemplateDownloader />

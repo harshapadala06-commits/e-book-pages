@@ -1,16 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { generateInstagramTip } from '../services/geminiService';
-import { Sparkles, Loader2, Share2 } from 'lucide-react';
+import { Sparkles, Loader2, Share2, Trash2 } from 'lucide-react';
 
 const FreeTipGenerator: React.FC = () => {
   const [tip, setTip] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
+  // Load from local storage on mount
+  useEffect(() => {
+    const savedTip = localStorage.getItem('instaGrow_unlockedTip');
+    if (savedTip) {
+      setTip(savedTip);
+    }
+  }, []);
+
   const handleGenerateTip = async () => {
     setLoading(true);
+    // Add a small artificial delay so the user feels the "AI processing" even if using local fallback
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
     const result = await generateInstagramTip();
+    
     setTip(result);
+    localStorage.setItem('instaGrow_unlockedTip', result);
     setLoading(false);
+  };
+
+  const handleClearTip = () => {
+    setTip(null);
+    localStorage.removeItem('instaGrow_unlockedTip');
   };
 
   return (
@@ -25,7 +43,7 @@ const FreeTipGenerator: React.FC = () => {
           Unsure? Get a Free AI-Generated Strategy Tip
         </h3>
         <p className="text-gray-600">
-          Experience a preview of the insights contained in the book. Powered by Gemini.
+          Experience a preview of the insights contained in the book.
         </p>
       </div>
 
@@ -52,7 +70,7 @@ const FreeTipGenerator: React.FC = () => {
             <p className="text-lg text-gray-800 font-serif italic leading-relaxed text-center">
               "{tip}"
             </p>
-            <div className="mt-6 flex justify-center">
+            <div className="mt-6 flex justify-center space-x-4">
               <button 
                 onClick={handleGenerateTip}
                 className="text-sm text-gray-500 hover:text-brand-orange transition-colors flex items-center"
